@@ -6,7 +6,7 @@ Author: Mikhaela Martin
 ### Project Objectives:
 1. Identify key patterns and factors that determine attrition rate.
 
-2. Build a model that predicts whether a customer is going to churn using given dataset. 
+2. Build a model that predicts user churn probability using given dataset. 
 
 ### Dataset
 We will be using a [credit card service company](https://www.kaggle.com/sakshigoyal7/credit-card-customers) dataset from Kaggle.  
@@ -54,6 +54,13 @@ Acquiring new customers costs much more than retaining them. As stated, we will 
 
 ### Images
 
+### Interesting Findings
+
+- People who incur a higher number of transactions and own more company products are less likely to churn. As a result, their average utilization ratio (credit spent / total credit) is much higher than non-churners.
+- People who contact the company more often are more likely to churn. This could be due to...
+- People who increasingly spend more credit in the last twelve months of data collection are less likely to churn.
+- 
+
 Gender: People who attrite are more likely to be female than male.
 
 Income_Category: People who earn certain incomes are more likely to attrite than others.
@@ -67,7 +74,16 @@ Contacts_Count_12_mon: Consumers who were in contact with more people in the cre
 `Total_Trans_Amt` : People who spend a lot at a time tend to not attrite.
 `Total_Amt_Chng_Q4_Q1` : People who increasingly spend more in the fourth quarter tend to not attrite.
 `Total_Trans_Ct` : People who make more transactions tend to not attrite.
-
+Numerical Features with different medians for churned and non-churned customers: 
+['Credit_Limit',
+ 'Total_Revolving_Bal',
+ 'Total_Amt_Chng_Q4_Q1',
+ 'Total_Trans_Amt',
+ 'Total_Trans_Ct',
+ 'Total_Ct_Chng_Q4_Q1',
+ 'Avg_Utilization_Ratio']
+### Why Is There a Spike At Months_on_book = 36?
+After investigating this, I am unsure. But, features such as gender, dependent count, and months_inactive_12_mon are correlated. Females, people with more dependents, and people less active in the last twelve months are more likely to have a months_on_book value of 36.
 
 ## Further Analysis:
 If I had more data about the specific time 
