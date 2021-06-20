@@ -1,13 +1,31 @@
-# Why Do Consumers Cancel Their Subscriptions?
+# What Type of Customers Are More Likely to Churn?
 
 ## Credit Card Company Customer Churn Classification 
 Author: Mikhaela Martin
 
-### Project Objectives:
-1. Identify key patterns and factors that determine attrition rate.
+### Project Objectives and Results:
+1. Build a model that predicts the probability a user churns with given dataset. 
 
-2. Build a model that predicts user churn probability using given dataset. 
+I tested four different classifier models: Logistic Regression, Gradient Boost, ADABoost, and Random Forest. I tested these models using all features in the original dataset and created separate models for feature selected data. The best model which maximized recall (79%) was the Random Forest model with eight features. 
 
+The metric I wanted to optimize for was recall (TP / (TP + FN)) because false negatives led to worse consequences than false positives. A false negative occurs when the model predicts a customer to not churn when in fact they did. If the credit card company wanted to target users who were more likely to churn for a marketing campaign, they would probably rather target more people on the verge of leaving than less people. 
+
+2. Identify key patterns and factors that determine attrition rate.
+
+The three features which contributed most to the Random Forest model were: Total_Trans_Amt, Total_Trans_Ct, and Total_Revolving_Bal.
+
+Total_Trans_Amt: The more transactions a customer makes, the less likely they will churn.
+
+Total_Trans_Amt: The more credit a customer spends, the less likely they will churn.
+
+Total_Revolving_Bal: The less credit a customer has left, the more likely they will churn.
+
+### Model Evaluation and Interpretation
+![](images/feature_importance.png "Feature Importances Best Model")
+![](images/no_fs_models.png "Precision_Recall Curves All Features")
+![](images/fs_models.png "Precision_Recall Curves Feature Selected")
+
+ 
 ### Dataset
 We will be using a [credit card service company](https://www.kaggle.com/sakshigoyal7/credit-card-customers) dataset from Kaggle.  
 
@@ -40,7 +58,14 @@ We will be using a [credit card service company](https://www.kaggle.com/sakshigo
 ***Average Card Utilization Ratio: Amount client owes divided by credit limit. (Total_Revolving_Bal / Credit_Limit)
 
 
-### Why is understanding customers' propensity to churn so valued?
+### Methods
+- Data Cleaning: Numpy, Pandas, Random Imputation
+- Exploratory Data Analysis: Matplotlib, Seaborn, Hypothesis Testing
+- Feature Selection: Recursive Feature Elimination
+- Model Building: Logistic Regression, Gradient Boost, ADABoost, Random Forest
+- Model Evaluation: Precision, Recall, Classification Report, Feature Importance
+
+### Why does churn matter?
 Companies want to maximize ther profits which takes both revenue and costs into account. There are three ways to increase revenue and we will go over why increasing retention rate is the most crucial. 
 
 1. Enhance or improve current products. While it is important to drive innovation forward, creating new features or products can actually take a lot of time, creativity, resources, and people to produce good results.
@@ -49,52 +74,10 @@ Companies want to maximize ther profits which takes both revenue and costs into 
 
 Acquiring new customers costs much more than retaining them. As stated, we will focus on how a company can identify whether a customer can churn. Once a model that can identify the types of customers who are likely to churn or provide a probability of people who are likely to churn at any given time, business solutions such as issuing a retention campaign or promotion can be put into place to target those most prone to churning.
 
-### Methods
-- Preparing Data: Random Imputation,
 
-### Images
-
-### Interesting Findings
-
-- People who incur a higher number of transactions and own more company products are less likely to churn. As a result, their average utilization ratio (credit spent / total credit) is much higher than non-churners.
-- People who contact the company more often are more likely to churn. This could be due to...
-- People who increasingly spend more credit in the last twelve months of data collection are less likely to churn.
-- 
-
-Gender: People who attrite are more likely to be female than male.
-
-Income_Category: People who earn certain incomes are more likely to attrite than others.
-
-Total_Relationship_Count: People who bought more products are less likely to attrite.
-
-Months_Inactive_12_mon: As months inactive increases, so does the probability of attriting.
-
-Contacts_Count_12_mon: Consumers who were in contact with more people in the credit card company are more likely to attrite.
-
-`Total_Trans_Amt` : People who spend a lot at a time tend to not attrite.
-`Total_Amt_Chng_Q4_Q1` : People who increasingly spend more in the fourth quarter tend to not attrite.
-`Total_Trans_Ct` : People who make more transactions tend to not attrite.
-Numerical Features with different medians for churned and non-churned customers: 
-['Credit_Limit',
- 'Total_Revolving_Bal',
- 'Total_Amt_Chng_Q4_Q1',
- 'Total_Trans_Amt',
- 'Total_Trans_Ct',
- 'Total_Ct_Chng_Q4_Q1',
- 'Avg_Utilization_Ratio']
 ### Why Is There a Spike At Months_on_book = 36?
 After investigating this, I am unsure. But, features such as gender, dependent count, and months_inactive_12_mon are correlated. Females, people with more dependents, and people less active in the last twelve months are more likely to have a months_on_book value of 36.
 
 ## Further Analysis:
-If I had more data about the specific time 
+If I had more data about the specific time users attrited, I could have used a time-series model to predict the proability of churn of each user at different phases of their relationship with the credit card company. I could have also created a function which predicted every user's expected time to churn.
 
-
-Probability they will churn in day X
-
-Expected time to churn - regression
-
-- To prevent churn: company based improvements, customer based marketing
-- In churn prediction:
-    - Be aware of class skew
-    - Consider both customer attributes and customer networks
-    - Interpretability, not just accuracy
