@@ -21,8 +21,10 @@ Total_Trans_Amt: The more credit a customer spends, the less likely they will ch
 Total_Revolving_Bal: The less credit a customer has left, the more likely they will churn.
 
 ### Model Evaluation and Interpretation
-![](images/feature_importance.png "Title")
+![](images/feature_importance.png "Feature Importance Table")
+
 ![](images/no_fs_models.png "Precision_Recall Curves All Features")
+
 ![](images/fs_models.png "Precision_Recall Curves Feature Selected")
 
  
