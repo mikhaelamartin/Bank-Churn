@@ -22,6 +22,8 @@ Total_Revolving_Bal: The less credit a customer has left, the more likely they w
 
 ### Model Evaluation and Interpretation
 
+Refer to images file for relevant information pertaining to feature importance and precision_recall curves for all models trained.
+
 **Feature Importance Table**
 ![](feature_importance.png "Title")
 **Precision_Recall Curves All Features**
