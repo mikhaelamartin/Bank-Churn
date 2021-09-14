@@ -3,7 +3,10 @@
 ## Credit Card Company Customer Churn Classification 
 Author: Mikhaela Martin
 
-### Project Objectives and Results:
+### Business Objectives
+Preventing churn is a widespread issue across all fields. I will discover which factors lead to attrition using a Kaggle credit card company dataset. 
+
+### Model Objectives:
 1. Build a model that predicts the probability a user churns with given dataset. 
 
 I tested four different classifier models: Logistic Regression, Gradient Boost, ADABoost, and Random Forest. I tested these models using all features in the original dataset and created separate models for feature selected data. The best model which maximized recall (79%) was the Random Forest model with eight features. 
@@ -11,6 +14,8 @@ I tested four different classifier models: Logistic Regression, Gradient Boost, 
 The metric I wanted to optimize for was recall (TP / (TP + FN)) because false negatives led to worse consequences than false positives. A false negative occurs when the model predicts a customer to not churn when in fact they did. If the credit card company wanted to target users who were more likely to churn for a marketing campaign, they would probably rather target more people on the verge of leaving than less people. 
 
 2. Identify key patterns and factors that determine attrition rate.
+
+### Conclusions
 
 The three features which contributed most to the Random Forest model were: Total_Trans_Amt, Total_Trans_Ct, and Total_Revolving_Bal.
 
@@ -24,13 +29,13 @@ Total_Revolving_Bal: The less credit a customer has left, the more likely they w
 
 Refer to images file for relevant information pertaining to feature importance and precision_recall curves for all models trained.
 
-**Feature Importance Table**
-![](https://github.com/mikhaelamartin/Bank-Churn/blob/master/images/feature_importance.PNG "Title")
-**Precision_Recall Curves All Features**
-![](https://github.com/mikhaelamartin/Bank-Churn/blob/master/images/fs_models.PNG "Title")
-**Precision_Recall Curves Feature Selected**
-![](https://github.com/mikhaelamartin/Bank-Churn/blob/master/images/no_fs_models.PNG "Title")
-
+#### Without Feature Selection, Random Forest is the Best Option
+![](https://github.com/mikhaelamartin/Bank-Churn/blob/master/images/no_fs_models.PNG)
+#### With Feature Selection, Random Forest is Still the Best Option
+![](https://github.com/mikhaelamartin/Bank-Churn/blob/master/images/fs_models.PNG)
+#### Customers Who Spend A Lot and Spend Often Are Less Likely to Churn
+Feature Importance Table with Feature Selection
+![](https://github.com/mikhaelamartin/Bank-Churn/blob/master/images/feature_importance.PNG)
  
 ### Dataset
 We will be using a [credit card service company](https://www.kaggle.com/sakshigoyal7/credit-card-customers) dataset from Kaggle.  
