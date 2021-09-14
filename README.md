@@ -25,11 +25,11 @@ Total_Revolving_Bal: The less credit a customer has left, the more likely they w
 Refer to images file for relevant information pertaining to feature importance and precision_recall curves for all models trained.
 
 **Feature Importance Table**
-![](feature_importance.png "Title")
+![](https://github.com/mikhaelamartin/Bank-Churn/blob/master/images/feature_importance.PNG "Title")
 **Precision_Recall Curves All Features**
-![](no_fs_models.png "Title")
+![](https://github.com/mikhaelamartin/Bank-Churn/blob/master/images/fs_models.PNG "Title")
 **Precision_Recall Curves Feature Selected**
-![](fs_models.png "Title")
+![](https://github.com/mikhaelamartin/Bank-Churn/blob/master/images/no_fs_models.PNG "Title")
 
  
 ### Dataset
