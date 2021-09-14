@@ -4,7 +4,7 @@
 Author: Mikhaela Martin
 
 ### Business Objectives
-Preventing churn is a widespread issue across all fields. I will discover which factors lead to attrition using a Kaggle credit card company dataset. 
+Preventing churn is a widespread issue across all fields. I will discover which factors lead to attrition using a [Kaggle credit card service company dataset](https://www.kaggle.com/sakshigoyal7/credit-card-customers).
 
 ### Model Objectives:
 1. Build a model that predicts the probability a user churns with given dataset. 
@@ -36,9 +36,7 @@ Refer to images file for relevant information pertaining to feature importance a
 #### Customers Who Spend A Lot and Spend Often Are Less Likely to Churn
 Feature Importance Table with Feature Selection
 ![](https://github.com/mikhaelamartin/Bank-Churn/blob/master/images/feature_importance.PNG)
- 
-### Dataset
-We will be using a [credit card service company](https://www.kaggle.com/sakshigoyal7/credit-card-customers) dataset from Kaggle.  
+
 
 ### Bank Churners Table
 
